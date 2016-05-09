@@ -62,7 +62,7 @@ app.use(function(err, req, res, next) {
 
 var stream = T.stream('statuses/filter', { track: '#wwe' });
 
-stream.on('fart', function(tweet) {
+stream.on('tweet', function(tweet) {
   //console.log(tweet);
 
   var mediaArray;
