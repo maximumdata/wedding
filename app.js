@@ -64,7 +64,7 @@ app.use(function(err, req, res, next) {
 
 var streamOfTweets = T.stream('statuses/filter', { track: '#RyanAndCait2016'});
 
-streamOfTweets.on('fart', function(tweet) {
+streamOfTweets.on('tweet', function(tweet) {
   var mediaArray;
   if(tweet.hasOwnProperty('entities.media')) {
     mediaArray = tweet.entities.media;
