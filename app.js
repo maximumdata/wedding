@@ -8,6 +8,8 @@ var bodyParser = require('body-parser');
 var T = require('./config/twitter');
 var Tweet = require('./models/tweets');
 
+var InstagramStream = require('instagram-realtime');
+
 var routes = require('./routes/index');
 var users = require('./routes/users');
 
@@ -60,11 +62,9 @@ app.use(function(err, req, res, next) {
   });
 });
 
-var stream = T.stream('statuses/filter', { track: '#wwe' });
+var streamOfTweets = T.stream('statuses/filter', { track: '#RyanAndCait2016'});
 
-stream.on('fart', function(tweet) {
-  //console.log(tweet);
-
+streamOfTweets.on('fart', function(tweet) {
   var mediaArray;
   if(tweet.hasOwnProperty('entities.media')) {
     mediaArray = tweet.entities.media;
@@ -88,5 +88,8 @@ stream.on('fart', function(tweet) {
   });
 
 });
+
+
+
 
 module.exports = app;

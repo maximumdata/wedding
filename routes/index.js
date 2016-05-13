@@ -14,35 +14,17 @@ router.get('/', function(req, res, next) {
   });
 });
 
-router.get('/add', function(req, res) {
-  var newTweet = Tweets({
-    text: 'sample text content',
-    user: {
-      image: 'sample image url',
-      name: 'sample name'
-    },
-    media: [
-      {
-        mediaType: 'photo',
-        url: 'sample photo url #1'
-      },
-      {
-        mediaType: 'video',
-        url: 'sample video url #2'
-      }
-    ],
-    hashtags: ['ohboy', 'what']
-  });
-
-  newTweet.save(function(err) {
-    if(err) { throw err; }
+router.get('/test', function(req, res) {
+  Tweets.find({}, function(err, tweets) {
+    if(err) { res.status(500).json({message: 'something broke'}); }
     else {
-      console.log('saved!');
-      res.send('saved');
+      res.render('test', {tweets: tweets});
     }
   });
+});
 
-
+router.get('/cards', function(req, res) {
+  res.render('cards');
 });
 
 module.exports = router;

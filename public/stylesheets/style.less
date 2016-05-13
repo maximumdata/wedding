@@ -1,3 +1,33 @@
-body {
-    background: orange;
+@import url(https://fonts.googleapis.com/css?family=Kaushan+Script);
+html, body {
+  height: 100%;
+  margin: 0;
+  font-family: 'Kaushan Script';
+}
+.cards {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  .card {
+    width: 45%;
+    margin-bottom: 50px;
+    div {
+      padding: 20px;
+      margin-top: 20px;
+      height: 50vh;
+      text-align: center;
+      line-height: 1.4;
+      font-size: 36px;
+      &:nth-of-type(1) {
+        transform: rotate(180deg);
+        //margin-bottom: 60px;
+      }
+      .ht {
+        padding: 0 5px;
+        color: #0e77cc;
+        display: block;
+      }
+    }
+  }
 }
