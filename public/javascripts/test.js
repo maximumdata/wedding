@@ -3,7 +3,7 @@ var getMoreBtn = document.getElementById('getMore');
 var tweetList = document.getElementById('tweets');
 
 getMoreBtn.addEventListener('click', function(e) {
-  ajaxGET('http://localhost:3000/', function(data) {
+  ajaxGET('http://45.55.81.176:5432/', function(data) {
     for(var i = 0; i < data.length; i++) {
       console.log('i = ' + i, data[i]);
       tweetList.innerHTML += '<li>'+data[i].text+'<img src="'+data[i].user.image+'"></li>';
