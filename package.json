@@ -15,7 +15,7 @@
     "instagram-realtime": "0.0.4",
     "jade": "~1.11.0",
     "less-middleware": "^3.0.0",
-    "mongoose": "^4.4.15",
+    "mongoose": "^5.7.5",
     "mongoose-auto-increment": "^5.0.1",
     "morgan": "~1.8.2",
     "serve-favicon": "~2.4.3",
